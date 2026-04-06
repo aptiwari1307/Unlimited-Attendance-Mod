@@ -5,8 +5,6 @@ import { QRCodeCanvas } from "qrcode.react";
 const socket = io("https://unlimited-attendance-mod.onrender.com");
 function App() {
   const [qrData, setQrData] = useState("");
-  const [rotatingQR, setRotatingQR] = useState("");
-
   // Receive data from server
   useEffect(() => {
     socket.on("qr-data", (data) => {
