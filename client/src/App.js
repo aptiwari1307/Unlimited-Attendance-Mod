@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import { QRCodeCanvas } from "qrcode.react";
 
-const socket = io("https://unlimited-attendance-mod.onrender.com");
+const socket = io("https://unlimited-attendance-mod.onrender.com", {
+  transports: ["websocket"],
+});
 function App() {
   const [qrData, setQrData] = useState("");
   // Receive data from server

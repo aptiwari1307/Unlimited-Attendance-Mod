@@ -5,7 +5,9 @@ import { io } from "socket.io-client";
 import Slider from "@react-native-community/slider";
 
 
-const socket = io("https://unlimited-attendance-mod.onrender.com");
+const socket = io("https://unlimited-attendance-mod.onrender.com", {
+  transports: ["websocket"],
+});
 export default function HomeScreen() {
   const [permission, requestPermission] = useCameraPermissions();
   const [zoom, setZoom] = useState(0);
